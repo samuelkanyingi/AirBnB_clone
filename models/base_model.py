@@ -8,6 +8,7 @@ import uuid
 from datetime import datetime
 
 class BaseModel:
+    instances = {}
 
     """BaseModel class that defines all instances
     and methods for other classes
@@ -16,15 +17,27 @@ class BaseModel:
         """This is the class instantiator"""
         if kwargs:
             for key, value in kwargs.items():
-                setattr(self,key, value)
-        if 'id' not in kwargs:
+                if key == 'created_at' or key == 'updated_at':
+                    setattr(self, key, datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                elif key != '__class__':
+                    setattr(self, key, value)
+            if 'id' not in kwargs:
+                self.id = str(uuid.uuid4())
+                key = f"{self.__class__.__name__}.{self.id}"
+            else:
+                key = f"{self.__class__.__name__}.{self.id}"
+            self._get_storage().new(self)
+            self.__class__.instances[self.id] = self
+            BaseModel.instances[key] = self
+        else:
             self.id = str(uuid.uuid4())
-
-        if 'created_at' not in kwargs:
+            key = f"{self.__class__.__name__}.{self.id}"
+            #self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
-
-        if 'updated_at' not in kwargs:
             self.updated_at = datetime.now()
+            self._get_storage().new(self)
+            self.__class__.instances[self.id] = self
+            BaseModel.instances[key] = self
 
     def __str__(self):
         """Return a string representation of the object."""
@@ -34,6 +47,15 @@ class BaseModel:
     def save(self):
         """Update the updated_at attribute with the current datetime."""
         self.updated_at = datetime.now()
+        self._get_storage().save()
+    @classmethod
+    def all(cls):
+        return cls.instances
+
+    def _get_storage(self):
+        from models import storage
+        return storage
+       
 
     def to_dict(self):
         """Return a dictionary representation of the object."""
@@ -42,5 +64,18 @@ class BaseModel:
         obj_dict['created_at'] = self.created_at.isoformat()
         obj_dict['updated_at'] = self.updated_at.isoformat()
         return obj_dict
-
+    @classmethod  
+    def update_instance(cls, instance_id,attribute,value):
+        """update specified attribute"""
+        key = f"{cls.__name__}.{instance_id}"
+        #key = "{}.{}".format(self.__class__.__name__,instance_id)
+        if key in cls.instances[key]:
+            instance = self.instance[key]
+            if attribute not in ['instance_id', 'created_at', 'updated_at']:
+                setattr(instance, attribute, value)
+                instance.save()
+            else:
+                print("cannot update id , created_at, updated_at")
+        else:
+            print("instance not found")
 
