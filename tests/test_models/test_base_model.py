@@ -14,6 +14,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertAlmostEqual(my_model.created_at,
                                datetime.now(), delta=timedelta(seconds=1))
 
+    
     def test_save(self):
         """test for save method"""
         my_model = BaseModel()
@@ -48,4 +49,4 @@ class TestBaseModel(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbosity=0)
