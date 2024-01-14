@@ -1,14 +1,40 @@
 #!/usr/bin/python3
+import unittest
 from models.base_model import BaseModel
+from datetime import datetime,timedelta
+import uuid
 
-my_model = BaseModel()
-my_model.name = "My First Model"
-my_model.my_number = 89
-print(my_model)
-my_model.save()
-print(my_model)
-my_model_json = my_model.to_dict()
-print(my_model_json)
-print("JSON of my_model:")
-for key in my_model_json.keys():
-    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
+class TestBaseModel(unittest.TestCase):
+    def test_str(self):
+        my_model = BaseModel()
+        self.assertAlmostEqual(my_model.created_at,datetime.now(),delta=timedelta(seconds=1))
+
+    def test_save(self):
+        my_model=BaseModel()
+        initial_update = my_model.updated_at
+        my_model.save()
+        self.assertNotEqual(my_model.updated_at, initial_update)
+        self.assertAlmostEqual(my_model.updated_at, datetime.now(), delta=timedelta(seconds=1))
+
+    def test_to_dict(self):
+        my_model = BaseModel()
+        my_model.name = "My first Model"
+        my_model.my_number = 89
+
+        my_model.save()
+        my_model_dict = my_model.to_dict()
+        self.assertIn('__class__', my_model_dict)
+        self.assertIn('created_at', my_model_dict)
+        self.assertIn('updated_at', my_model_dict)
+        self.assertIn('id', my_model_dict)
+        self.assertIn('name', my_model_dict)
+        self.assertIn('my_number', my_model_dict)
+        self.assertEqual(my_model_dict['__class__'], 'BaseModel')
+        self.assertEqual(my_model_dict['created_at'], my_model.created_at.isoformat())
+        self.assertEqual(my_model_dict['updated_at'], my_model.updated_at.isoformat())
+        self.assertEqual(my_model_dict['id'], my_model.id)
+        self.assertEqual(my_model_dict['name'], my_model.name)
+        self.assertEqual(my_model_dict['my_number'], my_model.my_number)
+if __name__ == '__main__':
+    unittest.main()
+
