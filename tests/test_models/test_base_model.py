@@ -15,6 +15,7 @@ class TestBaseModel(unittest.TestCase):
                                datetime.now(), delta=timedelta(seconds=1))
 
     def test_save(self):
+        """test for save method"""
         my_model = BaseModel()
         initial_update = my_model.updated_at
         my_model.save()
@@ -23,6 +24,7 @@ class TestBaseModel(unittest.TestCase):
                                delta=timedelta(seconds=1))
 
     def test_to_dict(self):
+        """test for to_dict method"""
         my_model = BaseModel()
         my_model.name = "My first Model"
         my_model.my_number = 89

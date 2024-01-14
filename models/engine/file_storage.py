@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+module for class FileStorage
+"""
 import json
 from models.base_model import BaseModel
 
@@ -24,8 +27,8 @@ class FileStorage:
         serialized_objects = {}
         for key, value in self.__objects.items():
             serialized_objects[key] = value.to_dict()
-            with open(self.__file_path, 'w') as file:
-                json.dump(serialized_objects, file)
+        with open(self.__file_path, 'w') as file:
+            json.dump(serialized_objects, file)
 
     def reload(self):
         """Reload objects from the JSON file"""

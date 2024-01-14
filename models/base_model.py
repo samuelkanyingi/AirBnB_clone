@@ -9,11 +9,11 @@ from datetime import datetime
 
 
 class BaseModel:
-    instances = {}
-
-    """BaseModel class that defines all instances
+    """
+    BaseModel class that defines all instances
     and methods for other classes
     """
+    instances = {}
     def __init__(self, *args, **kwargs):
         """This is the class instantiator"""
         if kwargs:
@@ -53,9 +53,11 @@ class BaseModel:
 
     @classmethod
     def all(cls):
+        """dictionary containing all instances of the class"""
         return cls.instances
 
     def _get_storage(self):
+        """Get the storage instance associated with the class"""
         from models import storage
         return storage
 
