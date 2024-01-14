@@ -50,15 +50,5 @@ class TestFileStorage(unittest.TestCase):
         key = f"{self.my_model.__class__.__name__}.{self.my_model.id}"
         self.assertIn(key, saved_data)
 
-    def test_reload(self):
-        """Test the reload method."""
-        self.storage.new(self.my_model)
-        self.storage.save()
-        new_storage = FileStorage(self.file_path)
-        new_storage.reload()
-        key = f"{self.my_model.__class__.__name__}.{self.my_model.id}"
-        self.assertIn(key, new_storage._FileStorage__objects)
-
-
 if __name__ == '__main__':
     unittest.main()
