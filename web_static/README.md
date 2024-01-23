@@ -1,6 +1,6 @@
 0x01. AirBnB clone - Web static
 
-Learning Objectives
+Learning Objective
 General
 
 What is HTML
