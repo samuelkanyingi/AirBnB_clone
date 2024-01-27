@@ -36,7 +36,7 @@ At the end of this project, you are expected to be able to **explain to anyone**
 * You are not allowed to use Javascript
 * Current screenshots have been done on **Chrome 56** or more.
 * No cross browsers
-* You have to follow all requirements but some **margin **/ **padding** are missing - you should try to fit as much as you can to screenshots
+* You have to follow all requirements but some **margin / padding** are missing - you should try to fit as much as you can to screenshots
 
 * Task 0. Inline styling
 * Task 1. Head styling
