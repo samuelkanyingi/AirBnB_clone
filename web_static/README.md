@@ -57,12 +57,12 @@ During this project, you will learn how to manipulate HTML and CSS languages. HT
 Before starting, please fork or clone the repository **AirBnB_clone** from your partner if you were not the owner of the previous project.
 
 
-* Task 0. Inline styling
-* Task 1. Head styling
-* Task 2. CSS files
-* Task 3. Zoning done!
-* Task 4. Search!
-* Task 5. More filters
-* Task 6. It's (h)over
-* Task 7. Display results
-* Task 8. More details
+0. Task 0. Inline styling
+1. Task 1. Head styling
+2. Task 2. CSS files
+3. Task 3. Zoning done!
+4. Task 4. Search!
+5. Task 5. More filters
+6. Task 6. It's (h)over
+7. Task 7. Display results
+8. Task 8. More details
