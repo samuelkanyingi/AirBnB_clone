@@ -6,7 +6,7 @@
 * The trinity of front-end quality
 
 # Learning Objective
-At the end of this project, you are expected to be able to <span style="color:red">explain to anyone</span>, **without the help of Google:**
+At the end of this project, you are expected to be able to **explain to anyone**, **without the help of Google:**
 
 # General
 * What is HTML
@@ -25,18 +25,18 @@ At the end of this project, you are expected to be able to <span style="color:re
 
 # Requirements
 ## General
-* Allowed editors: <span style="color:red">vi, vim, emacs</span>
+* Allowed editors:**vi, vim, emacs**
 * All your files should end with a new linevi, vim, emacs
-* A <span style="color:red">README.md</span> file, at the root of the folder of the project, is mandatory
-* Your code should be W3C compliant and validate with <span style="color:red">W3C-Validator</span>
-* All your CSS files should be in <span style="color:red">styles folder</span>
-* All your images should be in <span style="color:red">images</span> folder
-* You are not allowed to use <span style="color:red">!important</span> and <span style="color:red">id</span> (#... in the CSS file)
-* You are not allowed to use <span style="color:red">tags img, embed</span> and <span style="color:red">iframe</span>
+* A **README.md** file, at the root of the folder of the project, is mandatory
+* Your code should be W3C compliant and validate with **W3C-Validator**
+* All your CSS files should be in **styles folder**
+* All your images should be in **images** folder
+* You are not allowed to use **!important** and **id**(#... in the CSS file)
+* You are not allowed to use **tags img, embed**
 * You are not allowed to use Javascript
-* Current screenshots have been done on <span style="color:red">Chrome 56</span> or more.
+* Current screenshots have been done on **Chrome 56** or more.
 * No cross browsers
-* You have to follow all requirements but some <span style="color:red">margin </span>/ <span style="color:red">padding</span> are missing - you should try to fit as much as you can to screenshots
+* You have to follow all requirements but some **margin **/ **padding** are missing - you should try to fit as much as you can to screenshots
 
 * Task 0. Inline styling
 * Task 1. Head styling
