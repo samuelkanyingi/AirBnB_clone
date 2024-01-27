@@ -1,14 +1,14 @@
-#0x01. AirBnB clone - Web static
+# 0x01. AirBnB clone - Web static
 
-##Concepts
+## Concepts
 *For this project, I was expect you to look at these concepts:*
 * HTML/CSS
 * The trinity of front-end quality
 
-#Learning Objective
+# Learning Objective
 At the end of this project, you are expected to be able to <span style="color:red">explain to anyone</span>, **without the help of Google:**
 
-#General
+# General
 * What is HTML
 * How to create an HTML page
 * What is a markup language
@@ -23,8 +23,8 @@ At the end of this project, you are expected to be able to <span style="color:re
 * How to compute CSS Specificity Value
 * What are Box properties in CSS
 
-#Requirements
-##General
+# Requirements
+## General
 * Allowed editors: <span style="color:red">vi, vim, emacs</span>
 * All your files should end with a new linevi, vim, emacs
 * A <span style="color:red">README.md</span> file, at the root of the folder of the project, is mandatory
